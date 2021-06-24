@@ -169,7 +169,7 @@ de notas).
 * Trabaja en una historia hasta terminarla antes de pasar a la siguiente.
 
 * La aplicación debe ser un _Single Page App_. Las notas serán realizadas desde
-una _tablet_, pero **no debe ser una app nativa**, sino una web app que sea
+una _tablet_, la web app debe ser
 **responsive** y pueda funcionar **offline**.
 
 * Necesitamos pensar bien en el aspecto UX de quienes van a tomar las notas, el
