@@ -1,0 +1,16 @@
+@import './commons/styles/variables';
+@import './commons/styles/global';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fcb4ac;
+}
+
+@media screen and (max-width: 580px) {
+  
+}
