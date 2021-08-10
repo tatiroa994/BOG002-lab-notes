@@ -11,15 +11,6 @@ class Home extends Component {
       <section className="home-container">
         <img src="assets/home-logo.png" alt="" />
         <p>Notas & Notas</p>
-        <Card orientation="vertical">
-          <Link to="/login">
-            <ButtonMain text="Iniciar sesión" />
-          </Link>
-          <Link to="/register">
-            <ButtonMain text="Registrate" />
-          </Link>
-        </Card>
-
         <Card orientation="horizontal">
           <Link to="/login">
             <ButtonMain text="Iniciar sesión" />

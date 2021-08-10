@@ -15,7 +15,9 @@ function getClassOrientation(orientation) {
 function Card({ children, orientation }) {
   const orientationClass = getClassOrientation(orientation);
   console.log(orientationClass);
-  return <div className={`card ${orientationClass}`}>{children}</div>;
+  return <div className={`card ${orientationClass}`}>
+            {children}
+        </div>;
 }
 
 export default Card;
