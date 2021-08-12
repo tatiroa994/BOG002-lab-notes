@@ -1,20 +1,7 @@
-@use '../../commons/styles/variables' as var;
 @import "../../commons/styles/global";
 
 .home-container {
   @extend .column-center;  
-  height: 100vh;
-
-  img {
-    width: 60%;
-    max-width: 470px;
-  }
-
-  p {
-    font-family: var.$font-title;
-    color: var.$color-text;
-    font-size: 2rem;
-    margin-bottom: 0;
-  }
+  height: 100vh; 
 }
 
