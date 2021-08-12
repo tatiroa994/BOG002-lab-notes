@@ -1,0 +1,30 @@
+@use '../../styles/variables' as var;
+@import "../../styles/global";
+
+.btn-facebook {
+  background-color: #475993;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  margin: 0.8rem 0 0.8rem 0;
+  border: none;
+  border-radius: var.$radius;
+  box-shadow: var.$shadow;
+  cursor: pointer;
+  width: 100%;
+  max-width: 340px;
+
+  span {
+    font-family: var.$font-text;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-left: 0.7rem;
+    @media screen and (max-width: 580px) {
+      font-size: 1rem;
+    }
+  }
+
+  img {
+    width: 30px;
+  }
+}
