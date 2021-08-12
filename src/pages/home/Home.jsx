@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ButtonMain from "../../commons/components/Button-main/Button-main";
 import Card from "../../commons/components/Card/Card";
+import ImgText from "../../commons/components/Img-text/ImgText";
 
 import "./Home.scss";
 
@@ -9,13 +10,12 @@ class Home extends Component {
   render() {
     return (
       <section className="home-container">
-        <img src="assets/home-logo.png" alt="" />
-        <p>Notas & Notas</p>
+        <ImgText text="Notas" imgUrl="assets/home-logo.png" />
         <Card orientation="horizontal">
-          <Link to="/login">
+          <Link exact to="/login">
             <ButtonMain text="Iniciar sesión" />
           </Link>
-          <Link to="/register">
+          <Link exact to="/register">
             <ButtonMain text="Registrate" />
           </Link>
         </Card>
