@@ -7,6 +7,7 @@ import Register from "./pages/register/Register";
 import Timeline from "./pages/timeline/Timeline";
 import NotFound from "./pages/not-found/Not-Found";
 import Home from "./pages/home/Home";
+import ResetPass from "./pages/Reset-pass/ResetPass";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/login" component={Login}></Route>
         <Route exact path="/register" component={Register}></Route>
         <Route exact path="/timeline" component={Timeline}></Route>
+        <Route exact path="/resetPass" component={ResetPass}></Route>
         <Route component={NotFound}></Route>
       </Switch>
     </BrowserRouter>

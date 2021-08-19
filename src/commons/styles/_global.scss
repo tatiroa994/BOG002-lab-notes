@@ -21,6 +21,22 @@
   flex-wrap: wrap;
 }
 
+.input
+{
+  @extend .text;
+  border-radius: var.$radius;
+  border: #c4c4c4 solid 1px;
+  padding: 0.3rem 1rem;  
+  width: 100%;
+}
+
+.input:focus
+{
+  outline: none;
+  border-color: #604261;
+  box-shadow: 0 0 0 0.25rem rgb(96 66 97 /35%);
+}
+
 
 
 @media screen and (max-width: 580px) {
