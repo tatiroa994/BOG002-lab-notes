@@ -1,0 +1,17 @@
+@import "../../commons/styles/global";
+
+.login-section {
+  width: 100%;
+  height: 100vh;
+  @extend .row-around;
+
+  @media screen and (max-width: 580px) {
+   flex-direction: row;
+  }
+  
+}
+
+.form-login {
+  @extend .column-center;
+}
+
