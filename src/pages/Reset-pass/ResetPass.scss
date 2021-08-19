@@ -1,0 +1,11 @@
+@import "../../commons/styles/global";
+
+.reset-pass-section {
+  width: 100%;
+  height: 100vh;
+  @extend .column-center;
+}
+
+.img-container {
+  @extend .row-around;
+}
