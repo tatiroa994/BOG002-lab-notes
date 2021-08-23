@@ -4,6 +4,8 @@ import ButtonMain from "../../commons/components/Button-main/Button-main";
 import Card from "../../commons/components/Card/Card";
 import Input from "../../commons/components/Input/Input";
 import LabelText from "../../commons/components/Label-text/LabelText";
+import LinkRedirect from "../../commons/components/link/Link";
+import { auth } from "../../firebaseConfig";
 
 export default function ResetPass() {
   const [inputValueEmail, setInputValueEmail] = useState("");
@@ -14,13 +16,16 @@ export default function ResetPass() {
 
   const ResetPassword = (event) => {
     event.preventDefault();
-    console.log(inputValueEmail);
+    
+   auth.sendPasswordResetEmail(inputValueEmail);
+     console.log("Correo enviado");
+    
     setInputValueEmail("");
   };
 
   return (
     <section className="reset-pass-section">
-      <Card>
+      <Card orientation="vertical">
         <form onSubmit={ResetPassword} className="form-login">
           <LabelText textLabel="Correo electronico" />
           <Input
@@ -31,10 +36,9 @@ export default function ResetPass() {
           />
           <ButtonMain type="submit" text="restablecer" />
         </form>
+        <LinkRedirect href="/login" text="Volver al inicio" />
       </Card>
-      <div className="img-container">
-
-      </div>
+      <div className="img-container"></div>
     </section>
   );
 }

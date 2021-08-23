@@ -8,6 +8,7 @@ import Title from "../../commons/components/Title/Title";
 import ButtonMain from "../../commons/components/Button-main/Button-main";
 import ImgText from "../../commons/components/Img-text/ImgText";
 import LinkRedirect from "../../commons/components/link/Link";
+import { auth } from "../../firebaseConfig";
 
 function Register() {
   const [inputValueName, setInputValueName] = useState("");
@@ -26,14 +27,24 @@ function Register() {
     setInputValuePassword(event.target.value);
   };
 
-  const registerUser = (event) => {
+  const registerUser = async (event) => {
     event.preventDefault();
     console.log(inputValueName);
-    console.log(inputValueEmail);
-    console.log(inputValuePassword);
-    setInputValueName("");
-    setInputValueEmail("");
-    setInputValuePassword("");
+    try {
+      const res = await auth.createUserWithEmailAndPassword(
+        inputValueEmail,
+        inputValuePassword
+      );
+      await res.user.updateProfile({
+        displayName: inputValueName,
+      });
+      console.log(`${res.user.displayName} Esta registrado`);
+      setInputValueName("");
+      setInputValueEmail("");
+      setInputValuePassword("");
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (

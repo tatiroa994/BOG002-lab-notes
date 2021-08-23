@@ -12,10 +12,10 @@ class Home extends Component {
       <section className="home-container">
         <ImgText text="Notas" imgUrl="assets/home-logo.png" />
         <Card orientation="horizontal">
-          <Link exact to="/login">
+          <Link to="/login">
             <ButtonMain text="Iniciar sesión" />
           </Link>
-          <Link exact to="/register">
+          <Link to="/register">
             <ButtonMain text="Registrate" />
           </Link>
         </Card>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './Login.scss'
+import "./Login.scss";
 import ButtonFacebook from "../../commons/components/Button-facebook/ButtonFacebook";
 import ButtonGoogle from "../../commons/components/Button-google/ButtonGoogle";
 import Card from "../../commons/components/Card/Card";
@@ -10,6 +10,7 @@ import Title from "../../commons/components/Title/Title";
 import ButtonMain from "../../commons/components/Button-main/Button-main";
 import ImgText from "../../commons/components/Img-text/ImgText";
 import LinkRedirect from "../../commons/components/link/Link";
+import { auth } from "../../firebaseConfig";
 
 export default function Login() {
   const [inputValueEmail, setInputValueEmail] = useState("");
@@ -25,8 +26,10 @@ export default function Login() {
 
   const login = (event) => {
     event.preventDefault();
-    console.log(inputValueEmail);
-    console.log(inputValuePassword);
+    auth
+      .signInWithEmailAndPassword(inputValueEmail, inputValuePassword)
+      .then((res) => console.log("usuario logueado"))
+      .catch((err) => console.log(err.message));
   };
 
   return (
@@ -52,8 +55,14 @@ export default function Login() {
           />
           <ButtonMain text="Inicia sesión" type="submit" />
         </form>
-        <LinkRedirect href="/resetPass" text="¿Olvidaste tu  contraseña? Restablecer"/>
-        <LinkRedirect href="/register" text="¿No tienes una cuenta?  Regístrate"/>
+        <LinkRedirect
+          href="/resetPass"
+          text="¿Olvidaste tu  contraseña? Restablecer"
+        />
+        <LinkRedirect
+          href="/register"
+          text="¿No tienes una cuenta?  Regístrate"
+        />
       </Card>
       <ImgText text="Notas" imgUrl="assets/login-logo.png" />
     </section>
