@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Login.scss";
-import ButtonFacebook from "../../commons/components/Button-facebook/ButtonFacebook";
 import ButtonGoogle from "../../commons/components/Button-google/ButtonGoogle";
 import Card from "../../commons/components/Card/Card";
 import InputPassword from "../../commons/components/Input-password/InputPassword";
@@ -10,12 +9,12 @@ import Title from "../../commons/components/Title/Title";
 import ButtonMain from "../../commons/components/Button-main/Button-main";
 import ImgText from "../../commons/components/Img-text/ImgText";
 import LinkRedirect from "../../commons/components/link/Link";
-import { auth } from "../../firebaseConfig";
+import { auth, googleAuthProvider } from "../../firebaseConfig";
 
 export default function Login() {
   const [inputValueEmail, setInputValueEmail] = useState("");
   const [inputValuePassword, setInputValuePassword] = useState("");
-
+  
   const handleChangeEmail = (event) => {
     setInputValueEmail(event.target.value);
   };
@@ -32,13 +31,19 @@ export default function Login() {
       .catch((err) => console.log(err.message));
   };
 
+  const loginWithProvider = (provider) => {
+    auth
+      .signInWithPopup(provider)
+      .then((res) => console.log("Bienvenido"))
+      .catch((err) => console.log(err.message));
+  };
+
   return (
     <section className="login-section">
       <Card orientation="vertical">
         <Title text="Iniciar sesión" />
         <div>
-          <ButtonFacebook />
-          <ButtonGoogle />
+          <ButtonGoogle onClick={() => loginWithProvider(googleAuthProvider)} />
         </div>
         <form onSubmit={login} className="form-login">
           <LabelText textLabel="Correo electronico:" />

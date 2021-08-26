@@ -42,6 +42,7 @@ function Register() {
       setInputValueName("");
       setInputValueEmail("");
       setInputValuePassword("");
+      auth.signOut();
     } catch (error) {
       console.log(error.message);
     }
